@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <div class="profile-content">
-          <img src="../../assets/user_pic (1).png">
+          <img src="../../assets/user_pic(1).png">
           <div class="profile-content__profile-information">
               <div class="profile-information__username">{{username}}</div>
               <ul class="profile-information__actions">
