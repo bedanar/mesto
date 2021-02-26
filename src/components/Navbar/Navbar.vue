@@ -13,12 +13,12 @@ export default {
   name: 'Navbar',
   data() {
     return {
-      navItems: [{name: 'События', url: 'src/assets/event.svg'}, 
-      {name: 'Участники', url: 'src/assets/part.svg'}, 
-      {name: 'Группы', url: 'src/assets/groups.svg'}, 
-      {name: 'Мои контакты', url: 'src/assets/books.svg'}, 
-      {name: 'Сообщения', url: 'src/assets/messages.svg'},
-      {name: 'Взаимопомощь', url: 'src/assets/Heart.svg'}]
+      navItems: [{name: 'События', url: '/event.svg'}, 
+      {name: 'Участники', url: '/part.svg'}, 
+      {name: 'Группы', url: '/groups.svg'}, 
+      {name: 'Мои контакты', url: '/books.svg'}, 
+      {name: 'Сообщения', url: '/messages.svg'},
+      {name: 'Взаимопомощь', url: '/Heart.svg'}]
     }
   },
   methods: {

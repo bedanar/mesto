@@ -7,8 +7,7 @@
 
 <script>
 import UserData from './UserData.vue';
-import UserDescription from './UserDescriptioin.vue'
-
+import UserDescription from './UserDescriptioin.vue';
 export default {
   name: 'UserProfile',
   components: {
@@ -17,9 +16,12 @@ export default {
   },
   data() {
     return {
-      
+      info: {},
     }
   },
+  mounted() {
+  },
+  
   methods: {},
   computed: {},
   watch: {}

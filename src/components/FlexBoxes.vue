@@ -1,14 +1,13 @@
 <template>
   <div class="container flex-boxes">
       <Navbar />
-      <UserProfile />
+      <UserProfile  />
   </div>
 </template>
 
 <script>
 import Navbar from './Navbar/Navbar.vue';
-import UserProfile from './User Profile/UserProfile.vue'
-
+import UserProfile from './User Profile/UserProfile.vue';
 export default {
   name: 'FlexBoxes',
   components: {
@@ -17,9 +16,9 @@ export default {
   },
   data() {
     return {
-      
     }
   },
+  
   methods: {},
   computed: {},
   watch: {}

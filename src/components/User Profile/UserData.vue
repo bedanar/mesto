@@ -1,17 +1,17 @@
 <template>
   <div class="container">
       <div class="profile-content">
-          <img src="../../assets/user_pic(1).png">
+          <img  class="profile-content-img" :src="info.imagePath">
           <div class="profile-content__profile-information">
-              <div class="profile-information__username">{{username}}</div>
+              <div class="profile-information__username" :v-for="item in fullName">{{item}}</div>
               <ul class="profile-information__actions">
                   <li class="actions__item add">Добавить</li>
                   <li class="actions__item mess">Сообщение</li>
               </ul>
               <ul class="profile_information__personalinfo">
-                  <li class="personalinfo__item location">St.Petersburg, Russia </li>
-                  <li class="personalinfo__item email">konstana@gmail.com</li>
-                  <li class="personalinfo__item website">www.nastysuperstar.io</li>
+                  <li class="personalinfo__item location" :v-for="item in location">{{item}}</li>
+                  <li class="personalinfo__item email" :v-for="item in email">{{item}}</li>
+                  <li class="personalinfo__item website"></li>
               </ul>
               <ul class="profile-information__contacts">
                   <li class="contacts__item" v-for="item in contactsItem" :key="item.id"><a><img :src="item"></a></li>
@@ -27,19 +27,34 @@ export default {
   name: 'UserData',
   data() {
     return {
-      username: 'Анастасия Константинопольская',
       contactsItem: [
-          'src/assets/Facebook.svg',
-          'src/assets/VK.svg',
-          'src/assets/Twitter.svg',
-          'src/assets/Telegram.svg',
-          'src/assets/Instagram.svg',
-          'src/assets/Linkedin.svg'
-      ]
+           '/Facebook.svg',
+            '/VK.svg',
+            '/Twitter.svg',
+            '/Telegram.svg',
+            '/Instagram.svg',
+            '/Linkedin.svg'
+        ],
     }
   },
+  mounted(){
+      this.$store.dispatch('GET_PROFILEDATA');
+  },
   methods: {},
-  computed: {},
+  computed: {
+      fullName(){
+          return this.$store.getters.PROFILEDATA;
+      },
+      imagePath(){
+          return this.$store.getters.PROFILEDATA;
+      },
+      location(){
+          return this.$store.getters.PROFILEDATA;
+      },
+      email(){
+          return this.$store.getters.PROFILEDATA;
+      },
+  },
   watch: {}
 
 }
@@ -50,6 +65,10 @@ export default {
         margin-top: 0;
         display: flex;
         max-width: 700px;
+    }
+    .profile-content-img{
+        width: 256px;
+        height: 265px;
     }
     .profile-content__profile-information{
         padding-top: 16px;
@@ -83,7 +102,7 @@ export default {
         background-image: url('../../assets/add.svg');
     }
     .mess{
-        background-image: url('../../assets/messages.svg');
+        background-image: url('../../assets/message.svg');
     }
     .actions__item:not(:last-child){
         margin-right: 25px;
