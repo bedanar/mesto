@@ -1,16 +1,16 @@
 <template>
   <div class="container">
       <div class="profile-content">
-          <img  class="profile-content-img" :src="info.imagePath">
+          <img  class="profile-content-img" :src="profile.imagePath">
           <div class="profile-content__profile-information">
-              <div class="profile-information__username" :v-for="item in fullName">{{item}}</div>
+              <div class="profile-information__username" >{{profile.fullName}}</div>
               <ul class="profile-information__actions">
                   <li class="actions__item add">Добавить</li>
                   <li class="actions__item mess">Сообщение</li>
               </ul>
               <ul class="profile_information__personalinfo">
-                  <li class="personalinfo__item location" :v-for="item in location">{{item}}</li>
-                  <li class="personalinfo__item email" :v-for="item in email">{{item}}</li>
+                  <li class="personalinfo__item location" >{{profile.location}}</li>
+                  <li class="personalinfo__item email">{{profile.email}}</li>
                   <li class="personalinfo__item website"></li>
               </ul>
               <ul class="profile-information__contacts">
@@ -42,16 +42,7 @@ export default {
   },
   methods: {},
   computed: {
-      fullName(){
-          return this.$store.getters.PROFILEDATA;
-      },
-      imagePath(){
-          return this.$store.getters.PROFILEDATA;
-      },
-      location(){
-          return this.$store.getters.PROFILEDATA;
-      },
-      email(){
+      profile(){
           return this.$store.getters.PROFILEDATA;
       },
   },

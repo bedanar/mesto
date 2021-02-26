@@ -2,10 +2,10 @@
     <div class="container">
         <div class="user-description">
             <ul class="user-description__skills">
-                <li class="skills__item" v-for="item in info.skills" :key="item.id"><button class="item__btn">{{item}}</button></li>
+                <li class="skills__item" v-for="item in profileDescription.skills" :key="item.id"><button class="item__btn">{{item}}</button></li>
             </ul>
             <div class="user-description__personal-information">
-                {{info.about}}
+                {{profileDescription.about}}
 
             </div>
         </div>
@@ -15,13 +15,15 @@
 <script>
 export default {
   name: 'Header',
-  props: ['info'],
   data() {
     return {}
   },
   methods: {},
-  computed: {},
-  watch: {}
+  computed: {
+    profileDescription(){
+      return this.$store.getters.PROFILEDATA;
+  }},
+  watch: {},
 
 }
 </script>
