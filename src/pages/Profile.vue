@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Navbar from './Navbar/Navbar.vue';
-import UserProfile from './User Profile/UserProfile.vue';
-import Header from './Header/Header.vue';
+import Navbar from '../components/Navbar/Navbar.vue';
+import UserProfile from '../components/UserProfile/UserProfile.vue';
+import Header from '../components/Header/Header.vue';
 export default {
   name: 'FlexBoxes',
   components: {
