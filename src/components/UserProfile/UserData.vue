@@ -43,7 +43,9 @@ export default {
   methods: {},
   computed: {
       profile(){
-          return this.$store.getters['profile/PROFILEDTA'];
+        // eslint-disable-next-line no-debugger
+        debugger
+          return this.$store.getters['profile/PROFILEDATA'];
       },
   },
   watch: {}

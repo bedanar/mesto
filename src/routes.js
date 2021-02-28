@@ -1,10 +1,10 @@
-import FlexBoxes from '../src/components/FlexBoxes.vue';
-import Authorization from '../src/auth/Authorization.vue';
+import Profile from './pages/Profile.vue';
+import Authorization from './pages/Authorization.vue';
 import { createWebHistory, createRouter } from "vue-router";
 
 
 const routes = [
-    { path: '/', component: FlexBoxes },
+    { path: '/', component: Profile },
     { path: '/login', component: Authorization },
 ];
 const router = createRouter({

@@ -5,7 +5,7 @@
             <h1 class="authorization-page__heading">Вход в сообщество.</h1>
             <p class="authorization-page__description">Мы отправим на ваш e-mail ссылку для входа</p>
         </div>
-        <form class="input-auth" @submit="onSubmit"><input type="email" class="authorization-page__input" v-model= "email" placeholder="Email"></form>
+        <form class="input-auth" @submit.prevent="onSubmit"><input type="email" class="authorization-page__input" v-model= "email" placeholder="Email"></form>
     </div>
 </template>
 <script>
@@ -22,11 +22,11 @@ export default {
         }
     },
     // mounted(){
-    //     this.$store.dispatch('GET_TOKENID');
+    //     this.$index.dispatch('GET_TOKENID');
     // },
     // computed: {
     //   tokenId(){
-    //       return this.$store.getters.TOKENID;
+    //       return this.$index.getters.TOKENID;
     // }},
 }
 </script>
