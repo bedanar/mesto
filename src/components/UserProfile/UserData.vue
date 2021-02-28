@@ -43,8 +43,6 @@ export default {
   methods: {},
   computed: {
       profile(){
-        // eslint-disable-next-line no-debugger
-        debugger
           return this.$store.getters['profile/PROFILEDATA'];
       },
   },
