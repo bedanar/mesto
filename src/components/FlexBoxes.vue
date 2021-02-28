@@ -1,22 +1,30 @@
 <template>
-  <div class="container flex-boxes">
+  <div class="">
+    <Header />
+    <div class="container flex-boxes">
       <Navbar />
       <UserProfile  />
+    </div>
   </div>
 </template>
 
 <script>
 import Navbar from './Navbar/Navbar.vue';
 import UserProfile from './User Profile/UserProfile.vue';
+import Header from './Header/Header.vue';
 export default {
   name: 'FlexBoxes',
   components: {
       Navbar,
-      UserProfile
+      UserProfile,
+      Header
   },
   data() {
     return {
     }
+  },
+  mounted(){
+      this.$store.dispatch('GET_PROFILEDATA');
   },
   
   methods: {},

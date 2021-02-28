@@ -38,12 +38,12 @@ export default {
     }
   },
   mounted(){
-      this.$store.dispatch('GET_PROFILEDATA');
+    this.$store.dispatch('profile/GET_PROFILEDATA');
   },
   methods: {},
   computed: {
       profile(){
-          return this.$store.getters.PROFILEDATA;
+          return this.$store.getters['profile/PROFILEDTA'];
       },
   },
   watch: {}
