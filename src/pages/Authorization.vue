@@ -6,8 +6,10 @@
             <p class="authorization-page__description">Мы отправим на ваш e-mail ссылку для входа</p>
         </div>
         <form class="input-auth" @submit.prevent="onSubmit">
-            <input type="email" class="authorization-page__input" v-model= "email" placeholder="Email">
-            <button @click="getMagicLink">Send link</button>
+            <div class="input-auth__div"> 
+                <input type="email" class="authorization-page__input" v-model= "email" placeholder="Email">
+                <input type="submit" class="authorization__btn" value="" >
+            </div> 
         </form>
     </div>
 </template>
@@ -21,11 +23,9 @@ export default {
     },
     methods: {
         onSubmit () {
-            this.$store.dispatch('auth/GET_TOKENID', this.email)
-        },
-        // getMagicLink () {
-        //     this.$router.push({query: {'token=': this.token}})
-        // }
+            this.$store.dispatch('auth/GET_TOKENID', this.email);
+            this.$router.push('/super-page') 
+        }
     },
     
 }
@@ -63,8 +63,12 @@ export default {
 .input-auth{
     display: block;
     margin: 0 auto;
+    vertical-align: middle;
     /* display: flex;
     align-items: center; */
+}
+.input-auth__div{
+    display: flex;
 }
 .authorization-page__input{
     display: block;
@@ -76,9 +80,20 @@ export default {
     font-size: 18px;
     font-weight: 500;
     line-height: 25px;
+    color: #B6AFBC;
+}
+.authorization-page__input:active{
+    color: #B6AFBC;
+}
+.authorization__btn{
+    width: 10px;
+    min-height: 10px;
     background-image: url('/arrow-right.svg');
     background-repeat: no-repeat;
-    background-position: 300px 20px;
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    
 }
 
 </style>
