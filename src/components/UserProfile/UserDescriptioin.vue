@@ -19,9 +19,12 @@ export default {
     return {}
   },
   methods: {},
+  mounted(){
+    this.$store.dispatch('profile/GET_PROFILEDATA');
+  },
   computed: {
     profileDescription(){
-      return this.$store.getters.PROFILEDATA;
+      return this.$store.getters.['profile/PROFILEDATA'];
   }},
   watch: {},
 
